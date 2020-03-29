@@ -1,9 +1,14 @@
 package io.fabric8.podset.operator;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.api.model.PodList;
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition;
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionBuilder;
+import io.fabric8.kubernetes.client.Config;
+import io.fabric8.kubernetes.client.ConfigBuilder;
 import io.fabric8.kubernetes.client.DefaultKubernetesClient;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import io.fabric8.kubernetes.client.dsl.MixedOperation;
@@ -15,9 +20,6 @@ import io.fabric8.podset.operator.controller.PodSetController;
 import io.fabric8.podset.operator.crd.DoneablePodSet;
 import io.fabric8.podset.operator.crd.PodSet;
 import io.fabric8.podset.operator.crd.PodSetList;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Main Class for Operator, you can run this sample using this command:
